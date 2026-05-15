@@ -23,6 +23,12 @@ fun SettingsDialog(
     onLanguageChange: (String) -> Unit,
     onDismiss: () -> Unit
 ) {
+    var showAbout by remember { mutableStateOf(false) }
+
+    if (showAbout) {
+        AboutDialog(onDismiss = { showAbout = false })
+    }
+
     val themes = listOf("DARK" to "Sombre", "LIGHT" to "Clair", "HIGH_CONTRAST" to "Contraste élevé")
     val languages = listOf("fr" to "Français", "en" to "English")
 
@@ -78,7 +84,18 @@ fun SettingsDialog(
             }
         },
         confirmButton = {
-            Button(onClick = onDismiss) { Text(I18n["confirm"]) }
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                TextButton(onClick = { showAbout = true }) {
+                    Text(I18n["about"])
+                }
+                Button(onClick = onDismiss) {
+                    Text(I18n["confirm"])
+                }
+            }
         }
     )
 }

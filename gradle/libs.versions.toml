@@ -23,7 +23,7 @@ playAppUpdate = "2.1.0"
 
 # App Version
 appVersionName = "0.1.1"
-appVersionCode = "1"
+appVersionCode = "3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }

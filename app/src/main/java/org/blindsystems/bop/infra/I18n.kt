@@ -49,7 +49,14 @@ object I18n {
         "redo" to mapOf("fr" to "Retablir", "en" to "Redo"),
         "cancel" to mapOf("fr" to "Annuler", "en" to "Cancel"),
         "confirm" to mapOf("fr" to "Confirmer", "en" to "Confirm"),
-        "no_file" to mapOf("fr" to "Aucun fichier charge", "en" to "No file loaded")
+        "no_file" to mapOf("fr" to "Aucun fichier charge", "en" to "No file loaded"),
+        "about" to mapOf("fr" to "A propos", "en" to "About"),
+        "about_title" to mapOf("fr" to "A propos de BOP", "en" to "About BOP"),
+        "by_blind_systems" to mapOf("fr" to "Développé par BLIND SYSTEMS", "en" to "Developed by BLIND SYSTEMS"),
+        "developed_for_culture_musique" to mapOf("fr" to "Conçu pour l'association Culture Musique", "en" to "Designed for Culture Musique association"),
+        "license_apache" to mapOf("fr" to "Licence Apache 2.0", "en" to "Apache 2.0 License"),
+        "free_access" to mapOf("fr" to "Application libre d'accès", "en" to "Free access application"),
+        "contribute_invite" to mapOf("fr" to "Contribuez au projet !", "en" to "Contribute to the project!")
     )
 
     operator fun get(key: String): String =
