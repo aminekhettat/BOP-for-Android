@@ -92,6 +92,10 @@ dependencies {
     // Coroutines
     implementation(libs.kotlinx.coroutines.android)
 
+    // In-App Update
+    implementation(libs.play.app.update)
+    implementation(libs.play.app.update.ktx)
+
     // Tests - JUnit 5 & MockK
     testImplementation(libs.junit.jupiter)
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
