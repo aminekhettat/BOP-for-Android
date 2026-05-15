@@ -25,13 +25,13 @@ jobs:
       # Décodage du Keystore stocké en texte Base64 dans les secrets GitHub
       - name: Decode Keystore
         run: |
-          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > app/release-keystore.jks
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > app/release-keystore.keystore
 
       # Compilation et Signature de l'AAB (Android App Bundle)
       - name: Build and Sign Release AAB
         run: ./gradlew bundleRelease
         env:
-          KEYSTORE_FILE: "release-keystore.jks"
+          KEYSTORE_FILE: "release-keystore.keystore"
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
