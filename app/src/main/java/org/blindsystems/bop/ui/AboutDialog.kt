@@ -69,6 +69,12 @@ fun AboutDialog(onDismiss: () -> Unit) {
                 Divider(modifier = Modifier.padding(vertical = 8.dp))
 
                 // ── Blind Systems Info ────────────────────────────────────────
+                Image(
+                    painter = painterResource(id = R.mipmap.logo_blind_systems),
+                    contentDescription = "Logo Blind Systems",
+                    modifier = Modifier.size(100.dp)
+                )
+
                 Text(
                     text = I18n["by_blind_systems"],
                     style = MaterialTheme.typography.titleMedium,
