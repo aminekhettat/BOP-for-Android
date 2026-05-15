@@ -16,8 +16,15 @@ Le projet est en cours de développement. Pour compiler localement :
 3. Synchronisez Gradle.
 4. Lancez sur un émulateur ou un appareil réel.
 
-## Accessibilité
-Le projet "BOP for Android" suit les directives d'accessibilité Android (WCAG 2.1). Chaque élément d'interface possède une étiquette descriptive et une zone de toucher optimisée.
+## Engagement pour l'Accessibilité
+BOP a été conçu avec une approche **Accessibility-First** :
+- **Optimisation TalkBack** : Chaque bouton et curseur possède des labels sémantiques clairs et des indices d'état (ex: "Tempo à 80%").
+- **Contrastes Élevés** : L'interface respecte les ratios de contraste WCAG 2.1 AAA.
+- **Navigation Linéaire** : L'ordre de focus est logiquement structuré pour une navigation fluide au balayage.
+- **Retour Haptique** : Des vibrations subtiles confirment les actions critiques (définition de boucle, fin de session).
+
+## Politique de Confidentialité
+Votre vie privée est notre priorité. Consultez notre [Politique de Confidentialité](PRIVACY_POLICY.md) pour comprendre comment nous protégeons vos données.
 
 ## Licence
 Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
