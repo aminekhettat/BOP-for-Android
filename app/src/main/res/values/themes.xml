@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.BOP_android" parent="android:Theme.Material.Light.NoActionBar" />
+    <!-- Base application theme. Using Material3 tokens. -->
+    <style name="Theme.BOP_android" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- Modern edge-to-edge transparency -->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
 </resources>

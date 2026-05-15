@@ -16,3 +16,8 @@
 
 # DataStore
 -keep class androidx.datastore.** { *; }
+
+# Google Play In-App Update
+-keep class com.google.android.play.core.appupdate.** { *; }
+-keep class com.google.android.play.core.install.** { *; }
+-keep class com.google.android.play.core.tasks.** { *; }

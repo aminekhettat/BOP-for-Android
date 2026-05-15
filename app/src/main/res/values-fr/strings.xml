@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Back-Office Player</string>
+    <string name="open_file">Ouvrir un fichier audio</string>
+    <string name="play">Lecture</string>
+    <string name="pause">Pause</string>
+    <string name="stop">Arrêt</string>
+    <string name="set_a">Définir A</string>
+    <string name="set_b">Définir B</string>
+    <string name="clear_ab">Effacer A/B</string>
+    <string name="loop_ab">Boucle A-B</string>
+    <string name="segments">Segments</string>
+    <string name="save_segment">Sauvegarder segment</string>
+    <string name="jump_to_segment">Aller au segment</string>
+    <string name="delete_segment">Supprimer</string>
+    <string name="segment_name">Nom du segment</string>
+    <string name="no_segments">Aucun segment</string>
+    <string name="tempo">Tempo</string>
+    <string name="pitch">Hauteur</string>
+    <string name="volume">Volume</string>
+    <string name="preserve_pitch">Préserver la hauteur</string>
+    <string name="practice">Session de pratique</string>
+    <string name="loop_count">Nombre de boucles (0=inf)</string>
+    <string name="loop_delay">Délai entre boucles (s)</string>
+    <string name="progressive_tempo">Tempo progressif</string>
+    <string name="start_session">Démarrer</string>
+    <string name="stop_session">Arrêter</string>
+    <string name="loops_done">Boucles effectuées</string>
+    <string name="history">Historique</string>
+    <string name="export_csv">Exporter CSV</string>
+    <string name="settings">Paramètres</string>
+    <string name="theme">Thème</string>
+    <string name="language">Langue</string>
+    <string name="dark">Sombre</string>
+    <string name="light">Clair</string>
+    <string name="high_contrast">Contraste élevé</string>
+    <string name="undo">Annuler</string>
+    <string name="redo">Rétablir</string>
+    <string name="cancel">Annuler</string>
+    <string name="confirm">Confirmer</string>
+    <string name="no_file">Aucun fichier chargé</string>
+</resources>
