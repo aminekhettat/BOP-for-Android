@@ -1,4 +1,4 @@
-package org.blindsystems.bop
+package org.blindsystems.bop.media
 
 import androidx.media3.common.AudioAttributes
 import androidx.media3.common.C

@@ -1,4 +1,4 @@
-package org.blindsystems.bop.ui
+package org.blindsystems.bop.ui.components
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.background

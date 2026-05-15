@@ -1,4 +1,4 @@
-package org.blindsystems.bop
+package org.blindsystems.bop.media
 
 import android.content.Context
 import android.net.Uri

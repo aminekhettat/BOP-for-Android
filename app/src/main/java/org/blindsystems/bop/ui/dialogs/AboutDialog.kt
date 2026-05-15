@@ -1,4 +1,4 @@
-package org.blindsystems.bop.ui
+package org.blindsystems.bop.ui.dialogs
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
