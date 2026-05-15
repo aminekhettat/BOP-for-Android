@@ -29,3 +29,8 @@ google-services.json
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+*.jks
+*.keystore
+
+*.txt
