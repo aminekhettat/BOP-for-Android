@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      id-token: write # Nécessaire pour Google Cloud Workload Identity Federation
 
     steps:
       - name: Checkout code
@@ -23,40 +22,21 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      # 1. Authentification Google Cloud sans clé (Workload Identity Federation)
-      - name: Authenticate to Google Cloud
-        id: auth
-        uses: google-github-actions/auth@v2
-        with:
-          workload_identity_provider: '${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}'
-          service_account: '${{ secrets.GCP_SERVICE_ACCOUNT }}'
-
-      # 2. Récupération des secrets (Keystore et mots de passe) depuis Google Cloud Secret Manager
-      - name: Fetch Keystore and Passwords from GCP Secret Manager
-        id: secrets
-        uses: google-github-actions/get-secretmanager-secrets@v2
-        with:
-          secrets: |-
-            KEYSTORE_BASE64:${{ secrets.GCP_PROJECT_ID }}/bop_keystore_base64
-            KEYSTORE_PASSWORD:${{ secrets.GCP_PROJECT_ID }}/bop_keystore_password
-            KEY_ALIAS:${{ secrets.GCP_PROJECT_ID }}/bop_key_alias
-            KEY_PASSWORD:${{ secrets.GCP_PROJECT_ID }}/bop_key_password
-
-      # 3. Décodage du Keystore
+      # Décodage du Keystore stocké en texte Base64 dans les secrets GitHub
       - name: Decode Keystore
         run: |
-          echo "${{ steps.secrets.outputs.KEYSTORE_BASE64 }}" | base64 --decode > app/release-keystore.jks
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > app/release-keystore.jks
 
-      # 4. Compilation et Signature de l'AAB (Android App Bundle)
+      # Compilation et Signature de l'AAB (Android App Bundle)
       - name: Build and Sign Release AAB
         run: ./gradlew bundleRelease
         env:
           KEYSTORE_FILE: "release-keystore.jks"
-          KEYSTORE_PASSWORD: ${{ steps.secrets.outputs.KEYSTORE_PASSWORD }}
-          KEY_ALIAS: ${{ steps.secrets.outputs.KEY_ALIAS }}
-          KEY_PASSWORD: ${{ steps.secrets.outputs.KEY_PASSWORD }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
 
-      # 5. Publication de l'artefact (AAB prêt pour le Play Store)
+      # Publication de l'artefact (AAB prêt pour le Play Store)
       - name: Upload Release AAB
         uses: actions/upload-artifact@v4
         with:
